@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Bookmark Organizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.14.0",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1"
+  }
+}
+</script>
+    <style>
+      :root {
+        --color-bg-primary: #0F172A; /* slate-900 */
+        --color-bg-secondary: #1E293B; /* slate-800 */
+        --color-bg-tertiary: #334155; /* slate-700 */
+        --color-border: #475569; /* slate-600 */
+        --color-text-primary: #F1F5F9; /* slate-100 */
+        --color-text-secondary: #94A3B8; /* slate-400 */
+        --color-text-tertiary: #64748B; /* slate-500 */
+        --color-accent: #6366F1; /* indigo-500 */
+        --color-accent-hover: #4F46E5; /* indigo-600 */
+        --sidebar-width: 384px; /* Default max-w-sm */
+      }
+      body {
+        background-color: var(--color-bg-primary);
+        background-image: 
+          radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0),
+          radial-gradient(ellipse at bottom left, #1e293b, transparent 50%),
+          radial-gradient(ellipse at top right, #334155, transparent 50%);
+        background-size: 2rem 2rem, 100% 100%, 100% 100%;
+        color: var(--color-text-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: background-color 0.3s ease;
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.3s ease-out forwards;
+      }
+       .animate-title-change {
+        animation: titleChange 0.4s ease-in-out forwards;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+       @keyframes titleChange {
+        0% { opacity: 0; transform: translateY(5px); }
+        100% { opacity: 1; transform: translateY(0px); }
+      }
+      /* Custom scrollbar for a more integrated look */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-bg-primary);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-bg-tertiary);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-border);
+      }
+
+      /* Responsive sidebar handling */
+      @media (max-width: 1024px) {
+        :root { --sidebar-width: 320px; }
+      }
+      @media (max-width: 768px) {
+        :root { --sidebar-width: 280px; }
+      }
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

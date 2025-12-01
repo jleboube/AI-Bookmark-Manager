@@ -1,0 +1,5 @@
+{
+  "name": "AI Bookmark Organizer",
+  "description": "Clean, organize, and categorize your Chrome bookmarks with the power of AI. Upload your bookmarks file to find duplicates, auto-tag links, and create a smarter folder structure.",
+  "requestFramePermissions": []
+}
